@@ -30,21 +30,35 @@ document.addEventListener('DOMContentLoaded', function() {
   let playButton = document.getElementById('btn-play-music');
   let isPlaying = false; // Flag to track whether music is currently playing
 
+  // Function to update the button text based on the current state
+  function updateButtonText() {
+    if (isPlaying) {
+      playButton.textContent = 'Stop';
+    } else {
+      playButton.textContent = 'Play';
+    }
+  }
+
+  // Event listener for the play button
   playButton.addEventListener('click', function() {
     if (!isPlaying) {
       // Play the music
       musicPlayer.play();
       isPlaying = true;
-      playButton.textContent = 'Stop'; // Change the button text to indicate stopping
     } else {
       // Stop the music
       musicPlayer.pause();
       isPlaying = false;
-      playButton.textContent = 'Play'; // Change the button text back to indicate playing
     }
+    updateButtonText(); // Update the button text immediately
+  });
+
+  // Event listener for the ended event of the audio player
+  musicPlayer.addEventListener('ended', function() {
+    isPlaying = false;
+    updateButtonText(); // Update the button text when the music ends
   });
 });
-
 
 // Animation Timeline
 const animationTimeline = () => {
