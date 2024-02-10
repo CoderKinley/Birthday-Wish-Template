@@ -24,6 +24,28 @@ const fetchData = () => {
     });
 };
 
+// code for listining to a button click event and play the song
+document.addEventListener('DOMContentLoaded', function() {
+  let musicPlayer = document.getElementById('musicPlayer');
+  let playButton = document.getElementById('btn-play-music');
+  let isPlaying = false; // Flag to track whether music is currently playing
+
+  playButton.addEventListener('click', function() {
+    if (!isPlaying) {
+      // Play the music
+      musicPlayer.play();
+      isPlaying = true;
+      playButton.textContent = 'Stop'; // Change the button text to indicate stopping
+    } else {
+      // Stop the music
+      musicPlayer.pause();
+      isPlaying = false;
+      playButton.textContent = 'Play'; // Change the button text back to indicate playing
+    }
+  });
+});
+
+
 // Animation Timeline
 const animationTimeline = () => {
   // Spit chars that needs to be animated individually

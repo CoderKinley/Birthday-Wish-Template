@@ -6,8 +6,8 @@ body {
   margin: 0;
   font-family: "Work Sans", sans-serif;
 }
-
 .container {
+  position: relative;
   height: 100vh;
   width: 100vh;
   margin: 0 auto;
@@ -36,9 +36,39 @@ body {
   right: 0;
   top: 20vh;
 }
+.playbtn{
+  position: absolute;
+  bottom: -70vh;
+  z-index: 1000;
+  right: 20px;
+  background-color: #007BFF; /* Modern UI blue */
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding:  10px  20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size:  16px;
+  margin:  4px  2px;
+  cursor: pointer;
+  transition: all  0.3s ease; /* Smooth transition for hover effect */
+}
+.playbtn:hover{
+  box-shadow:  0  0  10px rgba(0,  123,  255,  0.5); /* Blue glowing shadow */
+  transform: translateY(-2px); /* Slight lift on hover */
+  cursor: pointer;
+}
 .lydia-dp{
-  height: 60vW;
-  width: 30vw;
+  height: 25vh;
+  width: 40vw;
+}
+
+@media (min-width:  600px) {
+  .lydia-dp {
+    height: 25vh;
+    width: 15vw;
+  }
 }
 .one {
   font-size: 4.5rem;
