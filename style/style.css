@@ -36,7 +36,10 @@ body {
   right: 0;
   top: 20vh;
 }
-
+.lydia-dp{
+  height: 60vW;
+  width: 30vw;
+}
 .one {
   font-size: 4.5rem;
 }
